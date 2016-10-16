@@ -1,0 +1,42 @@
+.slider_top {
+  height: 542px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    align-items:center;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #dfdfdf;
+  opacity:1;
+  margin: 10px 9px 0;
+}
+.swiper-pagination-bullet-active {
+  background: @red_dark;
+}
+.swiper-pagination {
+  width: 100%;
+}
+.sp2 {
+  position: inherit;
+}

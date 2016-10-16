@@ -1,0 +1,21 @@
+<!-- Wrapper-->
+<div id="wrapper">
+  <!-- Header -->
+  <div ng-include="'app/components/common/header.html'"></div>
+
+
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div id="page-wrapper" class="{{$state.current.name}}">
+
+        <!-- Main view  -->
+        <ui-view></ui-view>
+
+        <!-- Footer -->
+        <div ng-include="'app/components/common/footer.html'"></div>
+
+    </div>
+    <!-- End page wrapper-->
+
+</div>
+<!-- End wrapper-->

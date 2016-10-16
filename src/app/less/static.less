@@ -1,0 +1,96 @@
+.consult {
+  width: 170px;
+  height: 40px;
+  border:2px solid #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-left: auto;
+  &:hover,&:focus {
+    background: @orange;
+    border-color: @orange;
+    color: @gray;
+    text-decoration: none;
+  }
+}
+.orng__btn {
+  width: 170px;
+  height: 40px;
+  background: @orange;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.35);
+  text-transform: uppercase;
+  color: @gray;
+  font-weight: 900;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    height: 100%;
+    width: 4px;
+    background: @gray;
+    transition: all .2s;
+    position: absolute;
+    left: -4px;
+    top: 0;
+    content: '';
+  }
+  &:hover,&:focus {
+    text-decoration: none;
+    color: @gray;
+    &:before {
+      left: 0;
+    }
+  }
+  .arrow {
+    margin-left: 18px;
+  }
+}
+.Drop {
+  -webkit-animation-name: drop;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+  animation-name: drop;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    top: 10px;
+    opacity: 0;
+  }
+  30% {
+    top: 15px;
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: 10px;
+    opacity: 0;
+  }
+  30% {
+    top: 15px;
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
