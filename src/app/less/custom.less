@@ -54,7 +54,6 @@ ul {
   list-style-type: none;
 }
 
-
 .button {
   text-decoration: underline;
   color: #fff;
@@ -63,7 +62,9 @@ ul {
   width: 168px;
   height: 38px;
   border: 1px solid @red_dark;
-
+  @media @mobile__s {
+    width: 125px;
+  }
   &:hover {
     background-color: #c8002f;
     text-decoration: underline;
@@ -607,7 +608,10 @@ h3 {
   padding: 0;
 }
 .slider_content {
-
+  margin-top: -80px;
+  @media @320 {
+    margin-top: 0;
+  }
   div:nth-child(1) {
       >h3 {
         text-transform: uppercase;
@@ -637,9 +641,12 @@ h3 {
 
   .slider-ul {
     list-style:none;
-    margin: 80px 0 0 0;
+    margin-top: 80px;
+    @media @320 {
+      margin-top: 20px !important;
+    }
     >li {
-      padding: 9px 20px 0 0;
+      padding: 9px 10px 0 0;
     }
     li:first-child {
       list-style-type: none;

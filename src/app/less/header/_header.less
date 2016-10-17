@@ -1,8 +1,11 @@
 header {
   width: 100%;
-  height: 145px;
+  min-height: 145px;
   position: relative;
   padding: 20px 15px 0;
+  @media @mobile {
+    padding: 10px 7px 0;
+  }
 
 .header__logo {
   left: 50%;
@@ -11,16 +14,22 @@ header {
   transform: translate(-50%, -50%);
   display: block;
   z-index: 1;
-  @media @laptop {
-    left: 86%;
+  @media @table {
+    top: 43%;
   }
   @media @mobile {
-    left: 80%;
+    left: auto;
+    right: 14px;
+    position: absolute;
+    top: 16px;
+    transform: translate(0, 0);
   }
-}
-.tell_now {
-  @media @tablet {
-    display: none;
+  @media @867 {
+    left: auto;
+    right: 14px;
+    position: absolute;
+    top: 16px;
+    transform: translate(0, 0);
   }
 }
   .header_top_line {
@@ -30,33 +39,37 @@ header {
 
     .number {
       padding: 0;
-      @media @tablet {
-        margin-left: -34px;
+      text-align: center;
+      .tell_now {
+        @media @table {
+          text-align: left;
+        }
+        @media @mobile__s {
+          display: none;
+        }
       }
+
       i {
-        @media @tablet {
+        @media @table {
           display: none;
         }
       }
       .header_num {
-        .f_n {
-          @media @420 {
-            margin-left: 5px;
-            margin-right: 0;
-          }
-        }
-        .s_n {
-           @media @420 {
-             margin-left: 5px;
-             margin-right: 0;
-           }
-         }
-        @media @420 {
-          margin-left: 18px;
+        @media @mobile {
+          text-align: left;
         }
         >a {
+          @media @table {
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+          }
+          @media @mobile__s {
+            margin-right: 0;
+          }
           @media @420 {
-            font-size: 15px;
+            font-size: 13px;
+            display: block;
           }
         }
       }
@@ -69,10 +82,6 @@ header {
       a {
         font-size: 18px;
         color: #474038;
-        margin: 0 13px;
-        @media @420 {
-
-        }
       }
     }
     .contact {
@@ -131,12 +140,18 @@ header {
     -webkit-flex-flow: row wrap;
     justify-content: flex-end;
     margin-top: 20px;
-    @media @laptop {
-      justify-content: flex-start;
+    @media @table {
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+    @media @867 {
+      margin-top: 0;
     }
 
-      >button {
-        margin-left: 30px;
+      .mobile_b {
+        @media @table {
+          float: right;
+        }
       }
     >ul {
       line-height: 3;
@@ -186,9 +201,22 @@ header {
         }
         &:nth-child(3) {
           width: 175px;
+          @media @table {
+            width: 1px;
+          }
         }
         &:last-child:after {
           border: none;
+        }
+      }
+      li:nth-child(1) {
+        @media @table {
+          padding-left: 0;
+        }
+      }
+      li:nth-child(3) {
+        @media @table {
+          display: none;
         }
       }
     }
@@ -213,6 +241,22 @@ header {
 }
 .btn-default:focus, .btn-default.focus {
   background-color: inherit;
+  background: none;
+}
+.btn-default:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #333;
+}
+.btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+  background-color: #fff;
+  border-color: #fff;
+  color: #333;
+}
+.btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default.focus:active, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+  background-color: #fff;
+  border-color: #fff;
+  color: #333;
 }
 .top_hide_mnu {
   position: absolute;
@@ -223,16 +267,15 @@ header {
     width: 200px;
     cursor: pointer;
     line-height: 3;
-    border-bottom: 1px solid #dfe0e0;
-    background: @orange;
+    background: #fff;
     &:hover {
-      background-color: #e6e6e6;
+      background-color: #dbdee7;
     }
     >a {
       color: #3f3f3f;
       text-transform: uppercase;
       font-family: "OpenSansBold", sans-serif;
-      padding: 10px 0;
+      padding: 10px 0 10px 10px;
       &:hover {
         text-decoration: none;
       }
